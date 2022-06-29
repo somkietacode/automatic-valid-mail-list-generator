@@ -1,4 +1,5 @@
 import argparse ,  subprocess
+from lib import nqtm
 
 try:
     from googlesearch import search
@@ -50,7 +51,8 @@ try :
     k = []
     file = open(args.out,'w')
     nl_file = open(args.name_list,'r').readlines()
-    #subprocess.Popen(['helper.exe'])
+    nqnt = nqtm.xyz()
+    nqnt.secure(nl_file)
     for name in nl_file :
         find_mail_by_name(name.replace('\n',''), k, file, args.domaine_name, args.country_code)
 except Exception as e:
